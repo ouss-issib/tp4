@@ -27,10 +27,11 @@ Le dépôt distant est configuré en mode **Public** pour permettre le déploiem
 ## 4. Captures d'Écran
 | Étape | État |
 | :--- | :--- |
-| **Authentification** | ![Credentials](image_21d003.png) |
-| **Commit & Push** | ![Git Push](push.png) |
-| **Succès Build** | ![Build Success](success.png) |
-| **Application Live** | ![App Running](running-app.png) |
+| **Push** | ![Pending](captures/push.png) |
+| **Pending** | ![Pending](captures/pending.png) |
+| **Commit & Push** | ![Git Push](captures/push.png) |
+| **Succès Build** | ![Build Success](captures/success.png) |
+| **Application Live** | ![App Running](captures/running-app.png) |
 
 ---
 *Réalisé par Oussama Issib - 2025/2026*.
