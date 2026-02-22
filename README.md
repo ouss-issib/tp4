@@ -1,27 +1,36 @@
-# TP 5 : Intégration Continue (CI) avec Jenkins et Docker
+# TP 5 : Docker Engine, Jenkins et CI/CD
 
-[cite_start]Ce dépôt contient les ressources pour la première partie du TP portant sur la mise en place d'un flux d'intégration continue[cite: 4, 5].
+Ce projet documente la mise en place d'une chaîne d'intégration continue (CI) automatisée pour une application web conteneurisée.
 
-## 1. Fichiers du Projet
-Le projet est composé d'une application web simple et de sa configuration de conteneurisation :
-* [cite_start]**index.html** : Affiche le message "welcome bdcc"[cite: 49].
-* [cite_start]**Dockerfile** : Utilise l'image `nginx`, expose le port 80 et copie le fichier `index.html` vers le répertoire `/usr/share/nginx/html`[cite: 31, 32, 33].
+## 1. Objectifs de la Partie 1
+* [cite_start]Configuration de l'environnement Jenkins sur Windows[cite: 8].
+* [cite_start]Automatisation du build d'une image Docker Nginx[cite: 18].
+* [cite_start]Publication automatique vers le registre Docker Hub[cite: 11].
 
-## 2. Configuration Jenkins (Partie CI)
-### Configuration du Moteur Docker
-[cite_start]Pour lier Jenkins au moteur Docker sur Windows, la propriété globale suivante a été définie[cite: 210, 212]:
-* [cite_start]**Variable** : `DOCKER_HOST` [cite: 215]
-* [cite_start]**Valeur** : `tcp://localhost:2375` [cite: 217]
+## 2. Configuration Technique
+### Pipeline Jenkins (Job Freestyle)
+[cite_start]Le job **job TP5 Jenkins** est lié au dépôt GitHub et configuré pour se déclencher à chaque commit[cite: 64, 147].
+* **Source** : `https://github.com/ouss-issib/tp4`.
+* **Credentials** : Utilisation d'un Token d'accès sécurisé pour le compte Docker Hub `ousazwita`.
 
-### Authentification Docker Hub
-[cite_start]Les identifiants de connexion ont été configurés dans Jenkins pour permettre la publication de l'image[cite: 196]:
-* **Registry Credentials** : Identifiant `ousazwita` lié à un Access Token Docker Hub.
-* **Dépôt distant** : `ousazwita/tp_jenkins` (Dépôt public).
+### Docker Hub
+Le dépôt distant est configuré en mode **Public** pour permettre le déploiement ultérieur.
+* **Repository** : `ousazwita/tp_jenkins`.
 
-## 3. Détails du Job Jenkins
-Le job de type **Freestyle** nommé `job TP5 Jenkins` effectue les actions suivantes :
-1.  [cite_start]**Récupération du code** : Clone le dépôt depuis GitHub (`https://github.com/ouss-issib/tp4`)[cite: 117].
-2.  [cite_start]**Docker Build** : Génère l'image locale `ousazwita/tp_jenkins:latest`[cite: 173, 175, 176].
-3.  [cite_start]**Docker Publish** : Pousse l'image vers le registre Docker Hub après un succès du build[cite: 82, 98].
+## 3. Workflow de l'Application
+1. **Modification du Code** : Changement effectué dans le fichier `index.html` (ex: "tp5 v2").
+2. **Push Git** : Envoi des modifications vers la branche `main` via `git push`.
+3. **Build Jenkins** : Déclenchement automatique du build (Build #17 réussi en 16s).
+4. **Push Docker** : Publication de la nouvelle image sur Docker Hub.
+5. **Résultat** : L'application est accessible localement sur le port `8081`.
+
+## 4. Captures d'Écran
+| Étape | État |
+| :--- | :--- |
+| **Authentification** | ![Credentials](image_21d003.png) |
+| **Commit & Push** | ![Git Push](push.png) |
+| **Succès Build** | ![Build Success](success.png) |
+| **Application Live** | ![App Running](running-app.png) |
 
 ---
+*Réalisé par Oussama Issib - 2025/2026*.
