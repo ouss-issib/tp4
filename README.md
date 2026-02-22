@@ -25,4 +25,3 @@ Le job de type **Freestyle** nommé `job TP5 Jenkins` effectue les actions suiva
 3.  [cite_start]**Docker Publish** : Pousse l'image vers le registre Docker Hub après un succès du build[cite: 82, 98].
 
 ---
-[cite_start]*Projet réalisé dans le cadre du Master II BDCC - ENSET - 2025/2026*[cite: 3, 13].
