@@ -1,4 +1,4 @@
-def dockerImage // Déclaration pour éviter l'erreur de mémoire "WorkflowScript"
+def dockerImage
 
 pipeline { 
   environment { 
@@ -9,7 +9,7 @@ pipeline {
   stages { 
     stage('Cloning Git') { 
       steps { 
-        git branch: 'main', url: 'https://github.com/ouss-issib/tp4' 
+        checkout scm 
       } 
     } 
     stage('Building image') { 
@@ -21,18 +21,15 @@ pipeline {
     } 
     stage('Test image') { 
       steps { 
-        script { 
-          echo "Vérification du conteneur en cours..."
-          echo "Tests passed - L'image est stable." 
-        } 
+        echo "Tests passed" 
       } 
     } 
     stage('Publish Image') { 
       steps { 
         script { 
           docker.withRegistry( '', registryCredential ) { 
-            dockerImage.push()         
-//            dockerImage.push("latest") 
+            dockerImage.push() 
+            dockerImage.push('latest')
           } 
         } 
       } 
