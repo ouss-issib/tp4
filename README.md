@@ -10,7 +10,7 @@ Ce projet documente la mise en place d'une chaîne d'intégration continue (CI) 
 ## 2. Configuration Technique
 ### Pipeline Jenkins (Job Freestyle)
 Le job **job TP5 Jenkins** est lié au dépôt GitHub et configuré pour se déclencher à chaque commit.
-* **Source** : `https://github.com/ouss-issib/tp4`.
+* **Source** : `https://github.com/ouss-issib/Docker-Engine-Jenkins-CI-CD`.
 * **Credentials** : Utilisation d'un Token d'accès sécurisé pour le compte Docker Hub `ousazwita`.
 
 ### Docker Hub
