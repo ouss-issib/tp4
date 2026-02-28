@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>TP5 — DevOps Pipeline</title>
         <style>
-            :root{--bg:#042a5c;--card:#0b1220;--muted:#9aa7bf;--accent:#6ee7b7}
+            :root{--bg:#000000;--card:#0b1220;--muted:#9aa7bf;--accent:#6ee7b7}
             *{box-sizing:border-box}
-            body{margin:0;font-family:Inter,Segoe UI,Roboto,system-ui,-apple-system,"Helvetica Neue",Arial;color:#e6eef8;background:linear-gradient(180deg,#042a5c 0%, #063b78 50%, #02112b 100%);-webkit-font-smoothing:antialiased}
+            body{margin:0;font-family:Inter,Segoe UI,Roboto,system-ui,-apple-system,"Helvetica Neue",Arial;color:#e6eef8;background:#000000;-webkit-font-smoothing:antialiased}
             header{padding:36px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
             .brand{display:flex;align-items:center;gap:12px}
                .logo{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center}
@@ -33,7 +33,18 @@
     <body>
         <header>
             <div class="brand">
-                   <div class="logo"><img src="logo.svg" alt="TP5 logo" class="logo-img"></div>
+                   <div class="logo">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 160 160" aria-hidden="true" role="img">
+                           <defs>
+                               <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                                   <stop offset="0%" stop-color="#60a5fa" />
+                                   <stop offset="100%" stop-color="#2563eb" />
+                               </linearGradient>
+                           </defs>
+                           <rect x="8" y="8" rx="20" ry="20" width="144" height="144" fill="url(#g1)"/>
+                           <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="Segoe UI, Roboto, Inter, Arial" font-size="56" font-weight="700" fill="#ffffff">CI/CD</text>
+                       </svg>
+                   </div>
                 <div>
                     <div style="font-weight:700">TP5 — DevOps Pipeline </div>
                 </div>
