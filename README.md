@@ -3,13 +3,13 @@
 Ce projet documente la mise en place d'une chaîne d'intégration continue (CI) automatisée pour une application web conteneurisée.
 
 ## 1. Objectifs de la Partie 1
-* [cite_start]Configuration de l'environnement Jenkins sur Windows[cite: 8].
-* [cite_start]Automatisation du build d'une image Docker Nginx[cite: 18].
-* [cite_start]Publication automatique vers le registre Docker Hub[cite: 11].
+* Configuration de l'environnement Jenkins sur Windows.
+* Automatisation du build d'une image Docker Nginx.
+* Publication automatique vers le registre Docker Hub.
 
 ## 2. Configuration Technique
 ### Pipeline Jenkins (Job Freestyle)
-[cite_start]Le job **job TP5 Jenkins** est lié au dépôt GitHub et configuré pour se déclencher à chaque commit[cite: 64, 147].
+Le job **job TP5 Jenkins** est lié au dépôt GitHub et configuré pour se déclencher à chaque commit.
 * **Source** : `https://github.com/ouss-issib/tp4`.
 * **Credentials** : Utilisation d'un Token d'accès sécurisé pour le compte Docker Hub `ousazwita`.
 
