@@ -10,7 +10,8 @@
             body{margin:0;font-family:Inter,Segoe UI,Roboto,system-ui,-apple-system,"Helvetica Neue",Arial;color:#e6eef8;background:linear-gradient(180deg,#042a5c 0%, #063b78 50%, #02112b 100%);-webkit-font-smoothing:antialiased}
             header{padding:36px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
             .brand{display:flex;align-items:center;gap:12px}
-            .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#0ea5a4,#06b6d4);display:flex;align-items:center;justify-content:center;color:#04202a;font-weight:700;font-size:18px}
+               .logo{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+               .logo-img{width:44px;height:44px;display:block;border-radius:10px}
             h1{margin:0;font-size:28px}
             .sub{color:var(--muted);font-size:14px}
             main{padding:24px;max-width:1100px;margin:0 auto}
@@ -32,10 +33,9 @@
     <body>
         <header>
             <div class="brand">
-                <div class="logo">BDCC v2</div>
+                   <div class="logo"><img src="logo.svg" alt="TP5 logo" class="logo-img"></div>
                 <div>
                     <div style="font-weight:700">TP5 — DevOps Pipeline</div>
-                    <div class="sub">A minimal, lovely landing page for the course TP</div>
                 </div>
             </div>
             <nav class="sub">
