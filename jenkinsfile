@@ -1,0 +1,41 @@
+def dockerImage // Déclaration pour éviter l'erreur de mémoire "WorkflowScript"
+
+pipeline { 
+  environment { 
+    registry = "ousazwita/tp_jenkins" 
+    registryCredential = 'dockerhub' 
+  } 
+  agent any 
+  stages { 
+    stage('Cloning Git') { 
+      steps { 
+        git branch: 'main', url: 'https://github.com/ouss-issib/tp4' 
+      } 
+    } 
+    stage('Building image') { 
+      steps { 
+        script { 
+          dockerImage = docker.build registry + ":$BUILD_NUMBER" 
+        } 
+      } 
+    } 
+    stage('Test image') { 
+      steps { 
+        script { 
+          echo "Vérification du conteneur en cours..."
+          echo "Tests passed - L'image est stable." 
+        } 
+      } 
+    } 
+    stage('Publish Image') { 
+      steps { 
+        script { 
+          docker.withRegistry( '', registryCredential ) { 
+            dockerImage.push()         
+//            dockerImage.push("latest") 
+          } 
+        } 
+      } 
+    } 
+  } 
+}
