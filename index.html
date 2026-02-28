@@ -5,26 +5,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>TP5 — DevOps Pipeline</title>
         <style>
-            :root{--bg:#f8fafc;--card:#ffffff;--muted:#475569;--accent:#2563eb}
+            :root{--bg:#042a5c;--card:#0b1220;--muted:#9aa7bf;--accent:#6ee7b7}
             *{box-sizing:border-box}
-            body{margin:0;font-family:Inter,Segoe UI,Roboto,system-ui,-apple-system,"Helvetica Neue",Arial;color:#0b1220;background:linear-gradient(180deg,#ffffff 0%, #f1f5f9 50%, #eef2ff 100%);-webkit-font-smoothing:antialiased}
-            header{padding:28px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+            body{margin:0;font-family:Inter,Segoe UI,Roboto,system-ui,-apple-system,"Helvetica Neue",Arial;color:#e6eef8;background:linear-gradient(180deg,#042a5c 0%, #063b78 50%, #02112b 100%);-webkit-font-smoothing:antialiased}
+            header{padding:36px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
             .brand{display:flex;align-items:center;gap:12px}
-            .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#60a5fa,#2563eb);display:flex;align-items:center;justify-content:center;color:#ffffff;font-weight:700;font-size:18px}
+            .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#0ea5a4,#06b6d4);display:flex;align-items:center;justify-content:center;color:#04202a;font-weight:700;font-size:18px}
             h1{margin:0;font-size:28px}
             .sub{color:var(--muted);font-size:14px}
             main{padding:24px;max-width:1100px;margin:0 auto}
             .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:18px}
-            .panel{background:var(--card);border:1px solid rgba(15,23,42,0.06);padding:24px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+            .panel{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.03);padding:28px;border-radius:12px}
             .cta{display:flex;gap:12px;margin-top:18px}
-            .btn{background:var(--accent);color:#ffffff;padding:10px 16px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
-            .btn.ghost{background:transparent;color:var(--muted);border:1px solid rgba(15,23,42,0.06)}
+            .btn{background:var(--accent);color:#012225;padding:10px 16px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+            .btn.ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04)}
             .stages{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-            .stage{flex:1 1 140px;background:linear-gradient(180deg, rgba(2,6,23,0.02), transparent);padding:16px;border-radius:10px;border:1px solid rgba(15,23,42,0.04)}
+            .stage{flex:1 1 140px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
             .stage h4{margin:0 0 8px 0}
             .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
-            .card{background:var(--card);padding:16px;border-radius:10px;border:1px solid rgba(15,23,42,0.04)}
-            pre{background:#f1f5f9;color:#0b1220;padding:12px;border-radius:8px;overflow:auto;border:1px solid rgba(15,23,42,0.04)}
+            .card{background:var(--card);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+            pre{background:#021025;color:#bfe9d6;padding:12px;border-radius:8px;overflow:auto}
             footer{margin:36px 0 12px;color:var(--muted);text-align:center}
             @media(max-width:900px){.hero{grid-template-columns:1fr;}.cards{grid-template-columns:1fr}}
         </style>
