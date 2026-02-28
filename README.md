@@ -61,5 +61,8 @@ En utilisant un tunnel **ngrok** pour exposer Jenkins sur Internet, un Webhook G
 | **Conteneur en cours d'exécution** | ![Deploy Success](captures/deploy-image.png) |
 | **Application Live (Latest)** | ![App Running](captures/running-app-latest.png) |
 
+| Étape du Pipeline | Image de Référence |
+| :--- | :--- |
+| **Jenkins All TP Jobs** | ![App Running](captures/jenkins_jobs.png) |
 ---
 *Réalisé par Oussama Issib - 2025/2026*.
