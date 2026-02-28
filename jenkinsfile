@@ -1,4 +1,4 @@
-def dockerImage
+def dockerImage 
 
 pipeline { 
   environment { 
@@ -34,18 +34,19 @@ pipeline {
         } 
       } 
     } 
-  } 
     stage('Deploy image') { 
-       steps { 
-            script {
-            // 1. Arrêter et supprimer l'ancien conteneur s'il existe (pour éviter le conflit de port)
-            bat "docker stop tp_jenkins_container || ver > nul"
-            bat "docker rm tp_jenkins_container || ver > nul"
-            
-            // 2. Lancer le nouveau conteneur sur le port 8081
-            bat "docker run -d -p 8081:80 --name tp_jenkins_container $registry:$BUILD_NUMBER"
-            
-            echo "Application déployée sur http://localhost:8081"
-            }
-  } 
-}
+      steps { 
+        script {
+          // 1. Nettoyage de l'ancien conteneur
+          bat "docker stop tp_jenkins_container || ver > nul"
+          bat "docker rm tp_jenkins_container || ver > nul"
+          
+          // 2. Déploiement de la nouvelle version (Build #$BUILD_NUMBER)
+          bat "docker run -d -p 8081:80 --name tp_jenkins_container $registry:$BUILD_NUMBER"
+          
+          echo "Application déployée avec succès sur http://localhost:8081"
+        }
+      } 
+    } 
+  } // Fin des stages
+} // Fin du pipeline
